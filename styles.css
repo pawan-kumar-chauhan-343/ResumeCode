@@ -1,0 +1,136 @@
+      body {
+            background-color: #f4f6f9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #0d9488, #0d6efd);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #1f2a44;
+            margin-bottom: 0.5rem;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 0.75rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-control:focus {
+            border-color: #0d9488;
+            box-shadow: 0 0 0 0.2rem rgba(13, 148, 136, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0d9488, #0d6efd);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-success:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .progress {
+            height: 1.8rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e9ecef;
+            margin: 1rem 0;
+        }
+        .progress-bar {
+            background: linear-gradient(135deg, #0d9488, #0d6efd);
+            transition: width 0.3s ease;
+        }
+        .alert {
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ffe5e5, #f8d7da);
+            border: none;
+            color: #721c24;
+        }
+        .alert-info {
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #0c5460;
+        }
+        .form-check-input:checked {
+            background-color: #0d9488;
+            border-color: #0d9488;
+        }
+        #download-buttons {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .card-body {
+                padding: 1.5rem;
+            }
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .header {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.25rem;
+            }
+            .card-body {
+                padding: 1rem;
+            }
+            .form-control {
+                font-size: 0.9rem;
+            }
+        }
