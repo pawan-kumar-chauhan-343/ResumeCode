@@ -35,7 +35,7 @@
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         pdfjsLib.verbosity = pdfjsLib.VerbosityLevel.ERRORS; // Limit to errors only
 
-        const API_KEY = 'AIzaSyAyPHi-G2HuYLYzyAm6vowjUoAsyeBpaMw';
+        const API_KEY = 'YOUR-GEMINI-API-KEY';
         const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
         async function extractTextFromPDF(file) {
