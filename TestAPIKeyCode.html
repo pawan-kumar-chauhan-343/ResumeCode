@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Nucleus AI API Key</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+</head>
+<body>
+    <h1>Test Nucleus AI API Key</h1>
+    <button onclick="testApiKey()">Test API Key</button>
+    <div id="result"></div>
+
+    <script>
+        const API_ENDPOINT = 'https://api.nucleus.ai/talk2docs';
+        const API_TOKEN = 'YOUR_ACCESS_TOKEN'; // Replace with your actual Nucleus AI API token
+
+        async function testApiKey() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+
+            const payload = {
+                question: 'Test query: What is document classification?',
+                documentId: 'test_id' // Placeholder; replace if specific ID is required
+            };
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${API_TOKEN}`
+            };
+
+            try {
+                const response = await axios.post(API_ENDPOINT, payload, { headers });
+                resultDiv.innerHTML = `<strong>Success:</strong> ${JSON.stringify(response.data, null, 2)}`;
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.response?.data?.error?.message || error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
+
+### Instructions
+1. **Replace API Token**: Update `YOUR_ACCESS_TOKEN` with your actual Nucleus AI API token.
+2. **Document ID**: The `documentId` is set to `'test_id'` as a placeholder. If the API requires a valid document ID, you may need to upload a document first or use an existing ID from your Nucleus AI account.
+3. **Run the Code**:
+   - Save the code as `test-nucleus-api.html`.
+   - Open it in a browser (e.g., Chrome).
+   - Click the "Test API Key" button to send the request.
+4. **Check the Result**:
+   - If the API key is valid and the endpoint is correct, the response data will be displayed (e.g., JSON output from the API).
+   - If there’s an error (e.g., invalid token, wrong endpoint, or rate limit), the error message will be shown.
+
+### Expected Outcomes
+- **Success**: A valid API key will return a response, likely containing the answer to the test query or related data (e.g., `{ "answer": "..." }`). The exact format depends on Nucleus AI’s API response structure.
+- **Common Errors**:
+  - `401 Unauthorized`: Invalid or expired API token.
+  - `400 Bad Request`: Incorrect payload or missing `documentId`.
+  - `429 Too Many Requests`: Rate limit exceeded.
+  - Network errors: Incorrect endpoint or server issues.
+
+### Notes
+- **Security**: Avoid hardcoding the API token in production. Use environment variables or a backend to handle sensitive data.
+- **Endpoint Verification**: Ensure `https://api.nucleus.ai/talk2docs` is the correct endpoint. If Nucleus AI provides a different URL, update `API_ENDPOINT`.
+- **Document ID**: If `documentId` requires a specific value, consult Nucleus AI’s documentation or upload a test document to obtain a valid ID.
+- **Debugging**: Open the browser’s DevTools (F12) and check the Console or Network tab for detailed error information if the request fails.
+
+If you encounter errors or need help interpreting the API response, share the error message or response details, and I can assist further. You can also provide Nucleus AI’s API documentation for more precise adjustments.
